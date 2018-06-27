@@ -42,11 +42,13 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
-app.get('/profile', isLoggedIn, function(req, res) {
-  res.render('profile');
-});
+
 
 app.use('/auth', require('./controllers/auth'));
+app.use('/profile', require('./controllers/profile'));
+app.use('/carinfo', require('./controllers/carinfo'));
+app.use('/dailylog', require('./controllers/dailylog'));
+
 
 var server = app.listen(process.env.PORT || 3000);
 
