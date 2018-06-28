@@ -19,12 +19,12 @@ router.get('/new', isLoggedIn, function(req, res){
 })
 
 router.post('/new', isLoggedIn, function(req, res) {
-
-  db.milage.create({
+  var vehicleUsed = req.body.vehicles
+  db.mileage.create({
     distance: req.body.distance,
-    vehicleId: req.body.vehicles
-  }).then(function(milage){
-    res.redirect('./');
+    vehicleId: vehicleUsed
+  }).then(function(mileage){
+    res.redirect('/carinfo/'+vehicleUsed);
   })
 
 });
