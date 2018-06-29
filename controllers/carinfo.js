@@ -5,10 +5,10 @@ var router = express.Router();
 var request = require('request');
 
 
-
+//Route to get vehicle information on
 router.get('/', isLoggedIn, function(req, res) {
 
-  db.vehicle.findAll().then(function(vehicles){
+  db.vehicle.findAll({where:{userId: req.user.id}}).then(function(vehicles){
     res.render('carinfo/show', {vehicles: vehicles})
   })
 });
@@ -26,10 +26,11 @@ router.post('/new', isLoggedIn, function(req, res) {
     year: req.body.year,
     userId: req.user.id
   }).then(function(vehicle){
-    res.redirect('carinfo/show');
+    res.redirect('../profile');
   })
 
 });
+
 
 
 
@@ -54,7 +55,7 @@ router.get('/:id', isLoggedIn, function(req, res){
                     distance: mileage[mileage.length-1].distance
                   }
                 });
-      res.redirect('../profile', {footprintAmountDailyInPounds:footprintAmountDailyInPounds})
+      res.redirect('../profile')
 
     });
   });

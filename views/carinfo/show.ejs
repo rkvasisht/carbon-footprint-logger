@@ -1,1 +1,10 @@
 <h1>show carinfo<h1>
+
+<form class='deleteForm'>
+<% vehicles.forEach(function(vehicle, idx) { %>
+    <div class="well">
+      <h2><%= vehicle.model %></h2>
+      <a class='btn btn-danger delete'>Delete</a>
+    </div>
+<% }); %>
+</form>

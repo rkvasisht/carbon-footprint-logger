@@ -13,7 +13,7 @@ router.get('/', isLoggedIn, function(req, res) {
 });
 
 router.get('/new', isLoggedIn, function(req, res){
-  db.vehicle.findAll().then(function(vehicles){
+  db.vehicle.findAll({where:{userId: req.user.id}}).then(function(vehicles){
     res.render('dailylog/new', {vehicles: vehicles})
   })
 })
