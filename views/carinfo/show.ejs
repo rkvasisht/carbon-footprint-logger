@@ -4,7 +4,7 @@
 <% vehicles.forEach(function(vehicle, idx) { %>
     <div class="well">
       <h2><%= vehicle.model %></h2>
-      <a class='btn btn-danger delete'>Delete</a>
+      <a class='btn btn-danger delete' href='/carinfo/<%= vehicle.id %>'>Delete</a>
     </div>
 <% }); %>
 </form>

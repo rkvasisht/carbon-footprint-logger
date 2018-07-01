@@ -62,6 +62,16 @@ router.get('/:id', isLoggedIn, function(req, res){
 });
 });
 
+router.delete('/:id', function(req, res){
+  db.article.destroy({
+    where: {id: req.params.id}
+
+  }).then(function(data){
+    console.log(data)
+    res.sendStatus(200);
+  })
+})
+
 
 
 
