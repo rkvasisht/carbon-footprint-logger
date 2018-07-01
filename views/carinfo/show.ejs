@@ -1,10 +1,13 @@
 <h1>show carinfo<h1>
+  <a href="/auth/signup">Signup</a>
+  <a href="/auth/login">Login</a>
+  <a href="/auth/logout">Logout</a>
+  <a href="/profile">Profile</a>
 
-<form class='deleteForm'>
+
 <% vehicles.forEach(function(vehicle, idx) { %>
     <div class="well">
       <h2><%= vehicle.model %></h2>
-      <a class='btn btn-danger delete' href='/carinfo/<%= vehicle.id %>'>Delete</a>
+      <a class='btn btn-danger delete' href='/delete/<%= vehicle.id %>'>Delete</a>
     </div>
 <% }); %>
-</form>
