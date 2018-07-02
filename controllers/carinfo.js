@@ -55,12 +55,12 @@ router.get('/:id', isLoggedIn, function(req, res){
       //the carbon footprint amount that is listed in the data from the api.
       var footprintAmountDailyInPounds = ((footprintAmount.match(/\d+/)[0])*2.20462/365).toFixed(2);
       //convert from metric to english
-        db.mileage.update({carbon:footprintAmountDailyInPounds},
-          {where:{
-            vehicleId: req.params.id,
-            distance: mileage[mileage.length-1].distance
-              }
-        });
+      db.mileage.update({carbon:footprintAmountDailyInPounds},
+      {where:{
+      vehicleId: req.params.id,
+      distance: mileage[mileage.length-1].distance
+            }
+      });
                 //update the mileage model with the carbon amount for the car and distance that was driven.
       res.redirect('../profile')
 
@@ -70,7 +70,7 @@ router.get('/:id', isLoggedIn, function(req, res){
 });
 
 router.delete('/:id', function(req, res){
-  db.vehicles.destroy({
+  db.vehicle.destroy({
     where: {id: req.params.id}
 
   }).then(function(data){

@@ -36,7 +36,7 @@ router.post('/signup', function(req, res){
     }
   }).catch(function(error){
     //catch any erros
-    console.log(error.message);
+  
     req.flash('error', error.message);
     res.redirect('/auth/signup');
   });
