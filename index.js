@@ -8,7 +8,6 @@ var isLoggedIn = require('./middleware/isLoggedIn');
 var flash = require('connect-flash');
 var app = express();
 
-
 app.set('view engine', 'ejs');
 
 app.use(require('morgan')('dev'));
