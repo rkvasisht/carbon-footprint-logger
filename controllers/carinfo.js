@@ -74,7 +74,6 @@ router.delete('/:id', function(req, res){
     where: {id: req.params.id}
 
   }).then(function(data){
-    console.log(data)
     res.redirect('/');
   })
 });

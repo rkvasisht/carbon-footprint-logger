@@ -9,8 +9,8 @@ $('.delete').on('click', function(e){
      method: 'DELETE',
      url: url
   }).done(function(data){
-    console.log(data);
-    window.location = '/profile';
+    console.log(done);
+    window.location = '/profile/';
   })
 
 })
