@@ -26,7 +26,7 @@ router.post('/new', isLoggedIn, function(req, res) {
     year: req.body.year,
     userId: req.user.id
   }).then(function(vehicle){
-    res.redirect('/');
+    res.redirect('/carinfo');
   })
 
 });
