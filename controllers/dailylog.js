@@ -5,20 +5,13 @@ var bodyParser = require('body-parser');
 var router = express.Router();
 
 
-router.get('/', isLoggedIn, function(req, res) {
-
-  db.vehicle.findAll().then(function(vehicles){
-    res.render('dailylog/show', {vehicles: vehicles})
-  })
-});
-
-router.get('/new', isLoggedIn, function(req, res){
+router.get('/', isLoggedIn, function(req, res){
   db.vehicle.findAll({where:{userId: req.user.id}}).then(function(vehicles){
-    res.render('dailylog/new', {vehicles: vehicles})
+    res.render('dailylog/show', {vehicles: vehicles})
   })
 })
 
-router.post('/new', isLoggedIn, function(req, res) {
+router.post('/', isLoggedIn, function(req, res) {
   var vehicleUsed = req.body.vehicles
   db.mileage.create({
     distance: req.body.distance,

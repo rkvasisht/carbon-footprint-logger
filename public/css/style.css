@@ -1,0 +1,23 @@
+#signInForm{
+  padding-top: 50px;
+}
+#logonForm{
+  padding-top: 50px;
+}
+
+#signUpButton{
+  padding-top: 20px;
+}
+
+#submitButtonLogin{
+  padding-top: 10px;
+}
+
+#dailyLogForm{
+  padding-top: 40px;
+}
+
+.container{
+  margin-left:10px;
+  margin-right: 10px;
+}

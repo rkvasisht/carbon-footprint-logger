@@ -44,7 +44,7 @@ router.post('/signup', function(req, res){
 
 //POST /aut/login - the route that process the login form
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '/dailylog/new',
+  successRedirect: '/dailylog/',
   failureRedirect: '/auth/login',
   successFlash: 'You have logged in!',
   failureFlash: 'Invalid username and/or password!'

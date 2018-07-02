@@ -1,1 +1,18 @@
-<h1>Log info</h1>
+<% include ../partials/headers/dailylog %>
+
+
+<form action = '/dailylog' method = 'POST' id='dailyLogForm'>
+
+  <label>Select the vehicle from your latest trip<label>
+    <select name="vehicles" id='carSelect' class='browser-default'>
+      <% vehicles.forEach(function(vehicle) { %>
+      <option value="<%= vehicle.id %>"><%= vehicle.model  %></option>
+      <% }); %>
+    </select>
+
+  <label>Enter distance in miles, you drove on this trip<label>
+  <input type='text' name='distance'>
+  <input type='submit' value='submit'>
+
+
+</form>
